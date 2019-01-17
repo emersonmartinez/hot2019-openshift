@@ -13,6 +13,7 @@ spec:
         dynatrace/monitor: "true"
         pipeline.stage: prod
         pipeline.build: 1.4.0.7424
+        pipeline.project: sockshop
         support.contact: "jane.smith@sockshop.com"
         support.channel: "#support-sockshop-frontend"
       labels:

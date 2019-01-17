@@ -34,6 +34,7 @@ spec:
         dynatrace/instrument: "true"
         pipeline.stage: prod
         pipeline.build: 2.0.2.1234
+        pipeline.project: sockshop
         support.contact: "mary.poppins@sockshop.com"
         support.channel: "#support-sockshop-data"
       labels:

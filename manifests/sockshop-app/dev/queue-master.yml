@@ -13,6 +13,7 @@ spec:
         dynatrace/monitor: "true"
         pipeline.stage: dev
         pipeline.build: 1.0.1.0253
+        pipeline.project: sockshop
         support.contact: "jimmy.page@sockshop.com"
         support.channel: "#support-sockshop-middleware"
       labels:

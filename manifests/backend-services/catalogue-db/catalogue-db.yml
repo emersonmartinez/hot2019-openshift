@@ -13,8 +13,9 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
         dynatrace/monitor: "true"
-        stage: dev
-        build: 2.0.0.6347
+        pipeline.stage: dev
+        pipeline.build: 2.0.0.6347
+        pipeline.project: sockshop
         support.contact: "mary.poppins@sockshop.com"
         support.channel: "#support-sockshop-data"
       labels:
@@ -68,8 +69,9 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
         dynatrace/monitor: "true"
-        stage: prod
-        build: 1.4.3.0054
+        pipeline.stage: prod
+        pipeline.build: 1.4.3.0054
+        pipeline.project: sockshop
         support.contact: "mary.poppins@sockshop.com"
         support.channel: "#support-sockshop-data"
       labels:
