@@ -1,5 +1,10 @@
 #!/bin/bash
 
+oc create -f manifests/k8s-namespaces.yml
+
+oc adm policy add-role-to-user admin admin -n dev
+oc adm policy add-role-to-user admin admin -n production
+
 oc apply -f manifests/backend-services/user-db/dev/
 oc apply -f manifests/backend-services/user-db/production/
 
@@ -8,9 +13,9 @@ oc apply -f manifests/backend-services/shipping-rabbitmq/production/
 
 oc apply -f manifests/backend-services/carts-db/
 
-oc apply -f manifests/backend-services/catalogue-db.yml
+oc apply -f manifests/backend-services/catalogue-db/
 
-oc apply -f manifests/backend-services/orders-db.yml
+oc apply -f manifests/backend-services/orders-db/
 
 oc apply -f manifests/sockshop-app/dev/
 oc apply -f manifests/sockshop-app/production/
@@ -22,5 +27,3 @@ oc expose svc/carts
 oc project production
 oc expose svc/front-end
 oc expose svc/carts
-
-
