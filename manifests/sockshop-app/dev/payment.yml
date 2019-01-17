@@ -8,18 +8,24 @@ spec:
   replicas: 1
   template:
     metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
+        dynatrace/monitor: "true"
+        pipeline.stage: dev
+        pipeline.build: 1.1.0.8367
+        support.contact: "john.doe@sockshop.com"
+        support.channel: "#support-sockshop-services"
       labels:
         app: payment
-        version: v1
+        stage: dev
+        release: stable
+        version: "1.1"
+        tier: "business"
+        product: "sockshop"
     spec:
       containers:
       - name: payment
         image: dynatracesockshop/payment:0.5.0
-        env:
-        - name: DT_TAGS
-          value: "product=sockshop"
-        - name: DT_CUSTOM_PROP
-          value: "SERVICE_TYPE=BACKEND"
         resources:
           limits:
             cpu: 500m

@@ -10,24 +10,22 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
-        support.contact: "john.doe@sockshop.com"
+        dynatrace/monitor: "true"
+        pipeline.stage: prod
+        pipeline.build: 1.4.1.0365
+        support.contact: "tony.stark@sockshop.com"
         support.channel: "#support-sockshop-services"
       labels:
         app: user
-        stage: production
+        stage: prod
         release: stable
-        version: "0.5.0"
+        version: "1.4"
         tier: "business"
         product: "sockshop"
     spec:
       containers:
       - name: user
         image: bacherfl/user:0.5.0
-        env:
-        - name: DT_TAGS
-          value: "dt_tag1=value1"
-        - name: DT_CUSTOM_PROP
-          value: "CUSTOM_PROP1=VALUE1" 
         resources:
           limits:
             cpu: 500m

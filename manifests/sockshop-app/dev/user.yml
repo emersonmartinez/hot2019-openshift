@@ -8,18 +8,24 @@ spec:
   replicas: 1
   template:
     metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
+        dynatrace/monitor: "true"
+        pipeline.stage: dev
+        pipeline.build: 1.5.0.0073
+        support.contact: "tony.stark@sockshop.com"
+        support.channel: "#support-sockshop-services"
       labels:
         app: user
-        version: v1
+        stage: dev
+        release: stable
+        version: "1.5"
+        tier: "business"
+        product: "sockshop"
     spec:
       containers:
       - name: user
         image: bacherfl/user:0.5.0
-        env: 
-        - name: DT_TAGS
-          value: "product=sockshop"
-        - name: DT_CUSTOM_PROP
-          value: "SERVICE_TYPE=BACKEND"
         resources:
           limits:
             cpu: 500m

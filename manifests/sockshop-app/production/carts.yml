@@ -10,13 +10,16 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
+        dynatrace/monitor: "true"
+        pipeline.stage: prod
+        pipeline.build: 2.3.1.3476
         support.contact: "john.doe@sockshop.com"
         support.channel: "#support-sockshop-services"
       labels:
         app: carts
-        stage: production
+        stage: prod
         release: stable
-        version: "1.0"
+        version: "2.3"
         tier: "business"
         product: "sockshop"
     spec:
@@ -26,10 +29,6 @@ spec:
         env:
         - name: JAVA_OPTS
           value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
-        - name: DT_TAGS
-          value: "dt_tag1=value1"
-        - name: DT_CUSTOM_PROP
-          value: "CUSTOM_PROP1=VALUE1"
         resources:
           limits:
             cpu: 500m
@@ -78,4 +77,3 @@ spec:
   selector:
     app: carts
   type: LoadBalancer
-    

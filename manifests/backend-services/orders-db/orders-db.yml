@@ -23,11 +23,22 @@ spec:
     type: Recreate
   template:
     metadata:
-      labels:
-        name: orders-db
+    annotations:
+      sidecar.istio.io/inject: "false"
+      dynatrace/instrument: "true"
+      pipeline.stage: dev
+      pipeline.build: 1.1.1.0022
+      support.contact: "mary.poppins@sockshop.com"
+      support.channel: "#support-sockshop-data"
+    labels:
+      name: orders-db
+      stage: dev
+      version: "1.1"
+      tier: data
+      product: sockshop
     spec:
       containers:
-      - image: docker-registry.default.svc:5000/openshift/mongodb:latest 
+      - image: docker-registry.default.svc:5000/openshift/mongodb:latest
         name: orders-db
         env:
         - name: MONGODB_ADMIN_PASSWORD
@@ -89,11 +100,20 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
+        dynatrace/instrument: "true"
+        pipeline.stage: prod
+        pipeline.build: 1.0.2.0114
+        support.contact: "mary.poppins@sockshop.com"
+        support.channel: "#support-sockshop-data"
       labels:
         name: orders-db
+        stage: prod
+        version: "1.0"
+        tier: data
+        product: sockshop
     spec:
       containers:
-      - image: docker-registry.default.svc:5000/openshift/mongodb:latest 
+      - image: docker-registry.default.svc:5000/openshift/mongodb:latest
         name: orders-db
         env:
         - name: MONGODB_ADMIN_PASSWORD

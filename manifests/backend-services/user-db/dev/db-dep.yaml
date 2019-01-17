@@ -13,11 +13,23 @@ spec:
   template:
     metadata:
       creationTimestamp: null
+      annotations:
+        sidecar.istio.io/inject: "false"
+        dynatrace/instrument: "true"
+        pipeline.stage: dev
+        pipeline.build: 2.1.0.3723
+        support.contact: "mary.poppins@sockshop.com"
+        support.channel: "#support-sockshop-data"
       labels:
         io.kompose.service: user-db
+        name: user-db
+        stage: dev
+        version: "2.1"
+        tier: data
+        product: sockshop
     spec:
       containers:
-      - image: docker-registry.default.svc:5000/openshift/mongodb:latest 
+      - image: docker-registry.default.svc:5000/openshift/mongodb:latest
         name: user-db
         env:
         - name: MONGODB_ADMIN_PASSWORD
