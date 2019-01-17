@@ -3,28 +3,25 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: rabbitmq
-  labels:
-    name: rabbitmq
   namespace: production
 spec:
   replicas: 1
   template:
     metadata:
-    annotations:
-      sidecar.istio.io/inject: "false"
-      prometheus.io/scrape: "false"
-      dynatrace/instrument: "true"
-      pipeline.stage: prod
-      pipeline.build: 1.0.1.0005
-      support.contact: "jimmy.page@sockshop.com"
-      support.channel: "#support-sockshop-middleware"
-    labels:
-      name: rabbitmq
-      stage: prod
-      version: "1.0"
-      tier: messaging
-      product: sockshop
-
+      annotations:
+        sidecar.istio.io/inject: "false"
+        prometheus.io/scrape: "false"
+        dynatrace/instrument: "true"
+        pipeline.stage: prod
+        pipeline.build: 1.0.1.0005
+        support.contact: "jimmy.page@sockshop.com"
+        support.channel: "#support-sockshop-middleware"
+      labels:
+        name: rabbitmq
+        stage: prod
+        version: "1.0"
+        tier: messaging
+        product: sockshop
     spec:
       containers:
       - name: rabbitmq
