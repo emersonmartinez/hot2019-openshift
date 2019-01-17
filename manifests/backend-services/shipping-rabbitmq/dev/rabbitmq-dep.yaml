@@ -10,20 +10,20 @@ spec:
   replicas: 1
   template:
     metadata:
-    annotations:
-      sidecar.istio.io/inject: "false"
-      prometheus.io/scrape: "false"
-      dynatrace/instrument: "true"
-      pipeline.stage: dev
-      pipeline.build: 1.0.2.0114
-      support.contact: "jimmy.page@sockshop.com"
-      support.channel: "#support-sockshop-middleware"
-    labels:
-      name: rabbitmq
-      stage: dev
-      version: "1.0"
-      tier: messaging
-      product: sockshop
+      annotations:
+        sidecar.istio.io/inject: "false"
+        prometheus.io/scrape: "false"
+        dynatrace/instrument: "true"
+        pipeline.stage: dev
+        pipeline.build: 1.0.2.0114
+        support.contact: "jimmy.page@sockshop.com"
+        support.channel: "#support-sockshop-middleware"
+      labels:
+        name: rabbitmq
+        stage: dev
+        version: "1.0"
+        tier: messaging
+        product: sockshop
     spec:
       containers:
       - name: rabbitmq
