@@ -10,19 +10,19 @@ spec:
   replicas: 1
   template:
     metadata:
-    annotations:
-      sidecar.istio.io/inject: "false"
-      dynatrace/monitor: "true"
-      stage: dev
-      build: 2.0.0.6347
-      support.contact: "mary.poppins@sockshop.com"
-      support.channel: "#support-sockshop-data"
-    labels:
-      name: catalogue-db
-      stage: dev
-      version: "2.0"
-      tier: data
-      product: sockshop
+      annotations:
+        sidecar.istio.io/inject: "false"
+        dynatrace/monitor: "true"
+        stage: dev
+        build: 2.0.0.6347
+        support.contact: "mary.poppins@sockshop.com"
+        support.channel: "#support-sockshop-data"
+      labels:
+        name: catalogue-db
+        stage: dev
+        version: "2.0"
+        tier: data
+        product: sockshop
     spec:
       containers:
       - name: catalogue-db
@@ -65,19 +65,19 @@ spec:
   replicas: 1
   template:
     metadata:
-    annotations:
-      sidecar.istio.io/inject: "false"
-      dynatrace/monitor: "true"
-      stage: prod
-      build: 1.4.3.0054
-      support.contact: "mary.poppins@sockshop.com"
-      support.channel: "#support-sockshop-data"
-    labels:
-      name: catalogue-db
-      stage: prod
-      version: "1.4"
-      tier: data
-      product: sockshop
+      annotations:
+        sidecar.istio.io/inject: "false"
+        dynatrace/monitor: "true"
+        stage: prod
+        build: 1.4.3.0054
+        support.contact: "mary.poppins@sockshop.com"
+        support.channel: "#support-sockshop-data"
+      labels:
+        name: catalogue-db
+        stage: prod
+        version: "1.4"
+        tier: data
+        product: sockshop
     spec:
       containers:
       - name: catalogue-db
