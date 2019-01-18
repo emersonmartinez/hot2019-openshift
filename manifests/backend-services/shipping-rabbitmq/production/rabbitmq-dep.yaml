@@ -12,7 +12,7 @@ spec:
         sidecar.istio.io/inject: "false"
         prometheus.io/scrape: "false"
         dynatrace/instrument: "true"
-        pipeline.stage: prod
+        pipeline.stage: prod-stable
         pipeline.build: 1.0.1.0005
         pipeline.project: sockshop
         support.contact: "jimmy.page@sockshop.com"

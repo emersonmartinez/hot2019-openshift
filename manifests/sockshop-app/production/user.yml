@@ -11,7 +11,7 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
         dynatrace/monitor: "true"
-        pipeline.stage: prod
+        pipeline.stage: prod-stable
         pipeline.build: 1.4.1.0365
         pipeline.project: sockshop
         support.contact: "tony.stark@sockshop.com"

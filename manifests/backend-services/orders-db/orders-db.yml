@@ -102,7 +102,7 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
         dynatrace/instrument: "true"
-        pipeline.stage: prod
+        pipeline.stage: prod-stable
         pipeline.build: 1.0.2.0114
         pipeline.project: sockshop
         support.contact: "mary.poppins@sockshop.com"
