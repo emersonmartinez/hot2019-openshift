@@ -15,7 +15,7 @@ spec:
       creationTimestamp: null
       annotations:
         sidecar.istio.io/inject: "false"
-        dynatrace/instrument: "true"
+        dynatrace/instrument: "false"
         pipeline.stage: dev
         pipeline.build: 2.1.0.3723
         pipeline.project: sockshop

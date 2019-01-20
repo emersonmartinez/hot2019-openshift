@@ -10,7 +10,7 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
-        dynatrace/monitor: "true"
+        dynatrace/instrument: "false"
         pipeline.stage: dev
         pipeline.build: 2.3.0.2981
         pipeline.project: sockshop

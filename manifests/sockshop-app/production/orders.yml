@@ -10,7 +10,7 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
-        dynatrace/monitor: "true"
+        dynatrace/instrument: "false"
         pipeline.stage: prod-stable
         pipeline.build: 1.0.0.3883
         pipeline.project: sockshop
@@ -33,10 +33,10 @@ spec:
         resources:
           limits:
             cpu: 500m
-            memory: 1024Mi
+            memory: 2048Mi
           requests:
             cpu: 400m
-            memory: 1024Mi
+            memory: 2048Mi
         ports:
         - containerPort: 8080
         volumeMounts:

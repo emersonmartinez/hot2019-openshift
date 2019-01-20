@@ -13,7 +13,7 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
         prometheus.io/scrape: "false"
-        dynatrace/instrument: "true"
+        dynatrace/instrument: "false"
         pipeline.stage: dev
         pipeline.build: 1.0.2.0114
         pipeline.project: sockshop
