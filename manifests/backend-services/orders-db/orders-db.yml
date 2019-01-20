@@ -23,20 +23,20 @@ spec:
     type: Recreate
   template:
     metadata:
-    annotations:
-      sidecar.istio.io/inject: "false"
-      dynatrace/instrument: "false"
-      pipeline.stage: dev
-      pipeline.build: 1.1.1.0022
-      pipeline.project: sockshop
-      support.contact: "mary.poppins@sockshop.com"
-      support.channel: "#support-sockshop-data"
-    labels:
-      name: orders-db
-      stage: dev
-      version: "1.1"
-      tier: data
-      product: sockshop
+      annotations:
+        sidecar.istio.io/inject: "false"
+        dynatrace/instrument: "false"
+        pipeline.stage: dev
+        pipeline.build: 1.1.1.0022
+        pipeline.project: sockshop
+        support.contact: "mary.poppins@sockshop.com"
+        support.channel: "#support-sockshop-data"
+      labels:
+        name: orders-db
+        stage: dev
+        version: "1.1"
+        tier: data
+        product: sockshop
     spec:
       containers:
       - image: docker-registry.default.svc:5000/openshift/mongodb:latest
