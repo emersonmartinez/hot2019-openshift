@@ -2,9 +2,6 @@
 
 oc create -f manifests/k8s-namespaces.yml
 
-oc adm policy add-role-to-user admin admin -n dev
-oc adm policy add-role-to-user admin admin -n production
-
 oc apply -f manifests/backend-services/user-db/dev/
 oc apply -f manifests/backend-services/user-db/production/
 
